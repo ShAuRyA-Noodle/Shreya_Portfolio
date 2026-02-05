@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Shreya Punj Portfolio - Professional Healthcare & Administrative Design System */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Core palette - Calm, trustworthy healthcare aesthetic */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 20%;
+
+    /* Primary - Soft slate blue (trust, professionalism) */
+    --primary: 210 45% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Warm light gray */
+    --secondary: 210 15% 94%;
+    --secondary-foreground: 215 25% 25%;
+
+    /* Muted - Soft neutral */
+    --muted: 210 15% 92%;
+    --muted-foreground: 215 15% 50%;
+
+    /* Accent - Warm coral (subtle warmth) */
+    --accent: 15 60% 94%;
+    --accent-foreground: 15 50% 35%;
+
+    /* Warm highlight for key elements */
+    --warm: 25 70% 50%;
+    --warm-foreground: 0 0% 100%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 210 45% 40%;
+
+    --radius: 0.625rem;
+
+    /* Section backgrounds */
+    --section-alt: 210 25% 96%;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(215 25% 20% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(215 25% 20% / 0.08), 0 2px 4px -2px hsl(215 25% 20% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(215 25% 20% / 0.08), 0 4px 6px -4px hsl(215 25% 20% / 0.06);
+    --shadow-xl: 0 20px 25px -5px hsl(215 25% 20% / 0.1), 0 8px 10px -6px hsl(215 25% 20% / 0.08);
+
+    /* Sidebar (unused but required) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 25% 12%;
+    --foreground: 210 20% 95%;
+
+    --card: 215 25% 15%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 215 25% 15%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 210 50% 60%;
+    --primary-foreground: 215 25% 10%;
+
+    --secondary: 215 20% 22%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 215 20% 20%;
+    --muted-foreground: 215 15% 60%;
+
+    --accent: 15 40% 25%;
+    --accent-foreground: 15 60% 85%;
+
+    --warm: 25 65% 55%;
+    --warm-foreground: 0 0% 100%;
+
+    --destructive: 0 55% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 20% 25%;
+    --input: 215 20% 25%;
+    --ring: 210 50% 60%;
+
+    --section-alt: 215 25% 14%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight text-foreground;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .section-alt {
+    background-color: hsl(var(--section-alt));
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .card-elevated {
+    box-shadow: var(--shadow-md);
+    @apply bg-card rounded-lg border border-border/50 transition-all duration-300;
+  }
+
+  .card-elevated:hover {
+    box-shadow: var(--shadow-lg);
+    @apply border-border;
+  }
+
+  /* Subtle fade-in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Timeline connector */
+  .timeline-connector {
+    @apply absolute left-4 top-12 bottom-0 w-0.5 bg-border;
+  }
+
+  /* Skill badge */
+  .skill-badge {
+    @apply inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium 
+           bg-secondary text-secondary-foreground border border-border/50
+           transition-colors duration-200;
+  }
+
+  .skill-badge:hover {
+    @apply bg-primary/10 text-primary border-primary/30;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70;
+  }
+}
