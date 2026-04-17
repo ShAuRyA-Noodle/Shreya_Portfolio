@@ -14,7 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ["Satoshi", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["Instrument Serif", "ui-serif", "Georgia", "serif"],
+        mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -22,6 +24,11 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        ink: "hsl(var(--ink))",
+        cream: "hsl(var(--cream))",
+        paper: "hsl(var(--paper))",
+        espresso: "hsl(var(--espresso))",
+        sage: "hsl(var(--sage))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -70,6 +77,15 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      letterSpacing: {
+        tightest: "-0.06em",
+        tighter: "-0.04em",
+        micro: "0.14em",
+      },
+      transitionTimingFunction: {
+        editorial: "cubic-bezier(0.32, 0.72, 0, 1)",
+        swift: "cubic-bezier(0.22, 1, 0.36, 1)",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -79,20 +95,25 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "fade-in": {
-          from: { opacity: "0", transform: "translateY(12px)" },
+        "marquee-x": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(18px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
-        "slide-in-right": {
-          from: { opacity: "0", transform: "translateX(20px)" },
-          to: { opacity: "1", transform: "translateX(0)" },
+        shimmer: {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.6s ease-out forwards",
-        "slide-in-right": "slide-in-right 0.5s ease-out forwards",
+        "marquee-x": "marquee-x 40s linear infinite",
+        "fade-up": "fade-up 0.7s cubic-bezier(0.22,1,0.36,1) forwards",
+        shimmer: "shimmer 2.8s linear infinite",
       },
     },
   },
