@@ -1,4 +1,4 @@
-# Shreya Punj — Portfolio
+# Shreya Punj Portfolio
 
 A personal portfolio website for Shreya Punj, an Administrative and Medical Administrative Assistant based in the Greater Toronto Area. The site presents her background, experience, skills, education, and selected work in an editorial, motion-led single page, with direct ways to get in touch.
 
