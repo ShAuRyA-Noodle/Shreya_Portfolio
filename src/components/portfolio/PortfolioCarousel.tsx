@@ -272,14 +272,14 @@ function PortfolioCard({ item }: { item: PortfolioItem }) {
   const y = useMotionValue(0);
   const rotX = useSpring(useTransform(y, [-150, 150], [6, -6]), { stiffness: 150, damping: 18 });
   const rotY = useSpring(useTransform(x, [-150, 150], [-6, 6]), { stiffness: 150, damping: 18 });
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLAnchorElement>(null);
   const cursorX = useMotionValue(-200);
   const cursorY = useMotionValue(-200);
 
   const Icon = typeIcon[item.type];
   const glare = useMotionTemplate`radial-gradient(320px circle at ${cursorX}px ${cursorY}px, rgba(247,244,238,0.16), transparent 60%)`;
 
-  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const onMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const el = ref.current;
     if (!el) return;
     const r = el.getBoundingClientRect();

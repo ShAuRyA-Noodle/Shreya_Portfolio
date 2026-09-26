@@ -47,25 +47,31 @@ export function MagneticButton({
     y.set(0);
   };
 
-  const commonProps = {
-    ref: ref as never,
-    onMouseMove: onMove,
-    onMouseLeave: onLeave,
-    onClick,
-    className,
-    style: { ...style, x: springX, y: springY } as CSSProperties,
-    "aria-label": ariaLabel,
+  const setRef = (element: HTMLElement | null) => {
+    ref.current = element;
   };
+  const motionStyle = { ...style, x: springX, y: springY };
 
   if (as === "a") {
     return (
-      <motion.a href={href} target={target} rel={rel} {...(commonProps as never)}>
+      <motion.a
+        ref={setRef}
+        href={href}
+        target={target}
+        rel={rel}
+        onMouseMove={onMove}
+        onMouseLeave={onLeave}
+        onClick={onClick}
+        className={className}
+        style={motionStyle}
+        aria-label={ariaLabel}
+      >
         {children}
       </motion.a>
     );
   }
   if (as === "button") {
-    return <motion.button {...(commonProps as never)}>{children}</motion.button>;
+    return <motion.button ref={setRef} onMouseMove={onMove} onMouseLeave={onLeave} onClick={onClick} className={className} style={motionStyle} aria-label={ariaLabel}>{children}</motion.button>;
   }
-  return <motion.div {...(commonProps as never)}>{children}</motion.div>;
+  return <motion.div ref={setRef} onMouseMove={onMove} onMouseLeave={onLeave} onClick={onClick} className={className} style={motionStyle} aria-label={ariaLabel}>{children}</motion.div>;
 }
