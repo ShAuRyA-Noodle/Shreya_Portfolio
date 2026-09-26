@@ -14,7 +14,7 @@ Built as a fast, static single-page application with React, TypeScript, and Vite
 
 ## Tech stack
 
-- React 18 and React Router 6
+- React 18 and React Router 7
 - TypeScript and Vite 6
 - Tailwind CSS 3 with the typography plugin
 - Radix UI / shadcn/ui components
@@ -24,7 +24,7 @@ Built as a fast, static single-page application with React, TypeScript, and Vite
 
 ## Getting started
 
-Requirements: Node.js 18 or newer and npm.
+Requirements: Node.js 22.12 or newer and npm.
 
 ```bash
 # install dependencies
@@ -46,6 +46,7 @@ npm run preview
 | --- | --- |
 | `npm run dev` | Start the Vite dev server on port 8080. |
 | `npm run build` | Build the production bundle into `dist/`. |
+| `npm run typecheck` | Check application types without emitting files. |
 | `npm run build:dev` | Build using the development mode configuration. |
 | `npm run preview` | Serve the built `dist/` bundle locally. |
 | `npm run lint` | Run ESLint across the project. |
